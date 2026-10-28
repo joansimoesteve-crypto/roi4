@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Avatar Roi — tu opinión también construye ciudades, empresas e instituciones</title>
+<meta name="description" content="Un asistente flotante que te acompaña mientras navegas y te deja opinar sobre webs y lugares físicos.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#26331f;--moss:#3f5a3a;--sage:#e9efdc;--paper:#fbf7ec;--mut:#5b6a50;--line:#cfd6c2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 "Bricolage Grotesque",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-weight:600}nav a{color:var(--ink);text-decoration:none}nav .cta{background:var(--moss);color:#fff;padding:9px 18px;border-radius:99px}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;padding:48px 0 72px}
+h1{font-size:clamp(40px,7vw,76px);line-height:.98;letter-spacing:-.03em;font-weight:800;margin:0 0 20px}h1 span{display:block;color:var(--moss)}
+h2{font-size:clamp(24px,4vw,34px);letter-spacing:-.02em;margin:0 0 8px;line-height:1.1}h3{font-size:19px;margin:0 0 6px}
+.lead{max-width:48ch;color:var(--mut);font-size:19px;margin:0 0 28px}
+.btn{display:inline-block;padding:13px 24px;border-radius:99px;background:var(--moss);color:#fff;text-decoration:none;font:600 16px inherit;font-family:inherit;border:0;cursor:pointer}.btn.g{background:transparent;color:var(--ink);border:2px solid var(--ink);margin-left:8px}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.stage{position:relative;aspect-ratio:1;border-radius:36px;background:linear-gradient(170deg,#dfe9cf 0 58%,#c9d9b4 58%);display:grid;place-items:center}
+.stage img{width:58%;aspect-ratio:1;border-radius:50%;object-fit:cover;border:8px solid #5fb760;box-shadow:0 20px 50px #3f5a3a55}
+.stage p{position:absolute;left:18px;right:18px;top:18px;margin:0;background:#fff;padding:10px 14px;border-radius:16px;font-size:15px;box-shadow:0 8px 24px #26331f22}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink)}.cols>div{padding:28px 24px 28px 0}.cols>div+div{padding-left:24px;border-left:1px solid var(--line)}.cols p{margin:0;color:var(--mut)}
+section{margin-top:80px}.sub{color:var(--mut);margin:0 0 24px;max-width:56ch}
+.rank{display:grid;grid-template-columns:1fr 1fr;gap:20px 40px}.rank h3 span{font-weight:400;color:var(--mut);font-size:14px}
+ol.r{list-style:none;margin:0;padding:0}ol.r li{display:grid;grid-template-columns:1fr auto;padding:9px 0;border-bottom:1px solid var(--line)}ol.r small{grid-column:1;color:var(--mut)}ol.r .sc{grid-row:1/3;grid-column:2;font-weight:800;align-self:center}
+.up .sc{color:#3f8f45}.down .sc{color:#c4503f}.note{font-size:14px;color:var(--mut);margin-top:16px}
+.card{background:var(--sage);border-radius:28px;padding:36px}
+.gen{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:start}
+label{display:block;font-weight:600;margin:0 0 4px}input,select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fff;margin-bottom:14px}
+#out{margin-top:6px}#out input{margin-bottom:10px}#qr{background:#fff;padding:14px;border-radius:16px;width:max-content}#qr img{display:block}
+.row{display:flex;gap:8px;flex-wrap:wrap}.row .btn{padding:10px 18px;font-size:15px}
+.steps ol{margin:12px 0 0;padding-left:22px;max-width:62ch}.steps li{margin-bottom:8px}code{background:#fff;padding:2px 8px;border-radius:6px;font-size:.88em}
+.bm{display:inline-block;margin:6px 0;padding:10px 18px;border-radius:99px;border:2px dashed var(--moss);background:#fff;color:var(--ink);font-weight:700;text-decoration:none;cursor:grab}
+footer{padding:80px 0 100px;color:var(--mut);font-size:14px}
+@media(max-width:760px){.hero,.cols,.rank,.gen{grid-template-columns:1fr}.cols>div+div{border-left:0;border-top:1px solid var(--line);padding-left:0}.card{padding:24px}}
+</style></head><body>
+<div class="wrap">
+<nav><a href="#">Avatar Roi</a><a class="cta" href="#instalar">Instalar</a></nav>
+<header class="hero"><div>
+<h1>Valora.<span>Comparte.</span>Haz la diferencia.</h1>
+<p class="lead">Roi te acompaña mientras navegas, te pregunta cómo te sientes y convierte tu opinión en conocimiento para mejores ciudades, empresas e instituciones.</p>
+<a class="btn" href="#instalar">Instalar a Roi</a><a class="btn g" href="#" onclick="AvatarRoi.open();return false">Probar ahora</a></div>
+<div class="stage"><p>¡Hola! 👋 ¿Cómo te sientes con esta experiencia?</p><img id="hero" alt="Roi, tu asistente"></div></header>
+<div class="cols">
+<div><h3>Valora cualquier web</h3><p>Una carita, una emoción y, si quieres, un comentario. Todo en una conversación corta.</p></div>
+<div><h3>Opina en la calle</h3><p>Usa tu ubicación o escribe el lugar. Parques, estaciones, tiendas, oficinas.</p></div>
+<div><h3>Para quien decide</h3><p>Ayuntamientos, empresas e instituciones ven cómo se sienten sus usuarios, no solo qué puntuación ponen.</p></div></div>
+
+<section id="rankings"><h2>Lo que opina la gente</h2><p class="sub">Medias de 1 a 5 según la carita elegida. Solo cuentan sitios con valoraciones suficientes.</p>
+<div class="rank">
+<div class="up"><h3>Webs mejor valoradas</h3><ol class="r" id="wt"></ol></div><div class="down"><h3>Webs peor valoradas</h3><ol class="r" id="wl"></ol></div>
+<div class="up"><h3>Lugares mejor valorados</h3><ol class="r" id="pt"></ol></div><div class="down"><h3>Lugares peor valorados</h3><ol class="r" id="pl"></ol></div></div>
+<p class="note" id="note"></p></section>
+
+<section><div class="card gen"><div><h2>Pide que te valoren</h2><p class="sub">Crea un enlace y un QR para tu local, tu web o tu institución. Quien lo abra valora sin instalar nada.</p>
+<label for="nm">Nombre</label><input id="nm" placeholder="Ej. Café Central, Ayuntamiento de…" maxlength="80">
+<label for="ty">Tipo</label><select id="ty"><option value="place">Lugar físico</option><option value="web">Web</option><option value="org">Empresa o institución</option></select>
+<button class="btn" id="gen">Crear enlace y QR</button>
+<div id="out" hidden><label for="lk">Tu enlace</label><input id="lk" readonly><div class="row"><button class="btn" id="cp">Copiar</button><button class="btn g" id="sh" style="margin:0">Compartir</button><a class="btn g" id="dl" download="qr-roi.png" style="margin:0">Descargar QR</a></div></div></div>
+<div id="qr" aria-label="Código QR"></div></div></section>
+
+<section class="steps" id="instalar"><h2>Instalar a Roi</h2>
+<p class="sub">Elige la vía más rápida para ti.</p>
+<h3>Ahora mismo, sin instalar</h3><p>Arrastra este botón a tu barra de marcadores y púlsalo en cualquier web para que aparezca Roi:</p><a class="bm" id="bm" href="#">⭐ Roi</a>
+<h3 style="margin-top:24px">Extensión completa (Chrome, Edge, Brave)</h3>
+<ol><li>Descarga la carpeta <code>extension</code> del proyecto.</li><li>Abre <code>chrome://extensions</code> y activa el modo desarrollador.</li><li>Pulsa «Cargar descomprimida» y elige la carpeta.</li></ol>
+<p class="note">Con la ficha pública en Chrome Web Store será un solo clic.</p></section>
+<footer>Avatar Roi · Juntos construimos mejores ciudades, empresas e instituciones.</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="avatar.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+$('hero').src=AvatarRoi.img();
+$('bm').href="javascript:(function(){var s=document.createElement('script');s.src='"+location.origin+"/avatar.js';document.body.appendChild(s)})()";
+$('bm').onclick=e=>{if(!/^javascript:/.test(e.currentTarget.getAttribute('href')))return};
+/* Rankings: pon aquí la URL de tu API → {webs:[{name,avg,n}], places:[{name,avg,n}]} */
+const RANKINGS_URL='';
+const SAMPLE={webs:[{name:'tramites.ciudad-ejemplo.es',avg:4.6,n:312},{name:'tienda-ejemplo.com',avg:4.4,n:208},{name:'universidad-ejemplo.edu',avg:4.1,n:150},{name:'banco-ejemplo.com',avg:2.2,n:410},{name:'sede-electronica-ejemplo.gob',avg:1.9,n:520},{name:'aerolinea-ejemplo.com',avg:2.8,n:233}],
+places:[{name:'Parque Central',avg:4.8,n:540},{name:'Biblioteca Municipal',avg:4.7,n:210},{name:'Mercado del Norte',avg:4.3,n:330},{name:'Estación Intermodal',avg:2.1,n:620},{name:'Paso subterráneo Av. Sur',avg:1.8,n:140},{name:'Oficina de Atención',avg:2.6,n:260}]};
+function list(id,a,dir){const ol=$(id);ol.innerHTML='';[...a].sort((x,y)=>dir*(y.avg-x.avg)).slice(0,5).forEach(x=>{const li=document.createElement('li'),s=document.createElement('span'),c=document.createElement('span'),m=document.createElement('small');s.textContent=x.name;c.className='sc';c.textContent='★ '+x.avg.toFixed(1);m.textContent=x.n+' valoraciones';li.append(s,c,m);ol.append(li)})}
+function show(d,sample){list('wt',d.webs,1);list('wl',d.webs,-1);list('pt',d.places,1);list('pl',d.places,-1);$('note').textContent=sample?'Datos de ejemplo. Se sustituyen por los reales al conectar tu base de datos.':''}
+(RANKINGS_URL?fetch(RANKINGS_URL).then(r=>r.json()).then(d=>show(d,false)):Promise.reject()).catch(()=>show(SAMPLE,true));
+/* QR + enlace */
+$('gen').onclick=()=>{const n=$('nm').value.trim();if(!n){$('nm').focus();return}
+const u=location.origin+'/valorar.html?t='+$('ty').value+'&n='+encodeURIComponent(n);$('lk').value=u;$('qr').innerHTML='';new QRCode($('qr'),{text:u,width:220,height:220,correctLevel:QRCode.CorrectLevel.M});$('out').hidden=false;
+setTimeout(()=>{const c=$('qr').querySelector('canvas');if(c)$('dl').href=c.toDataURL('image/png')},100)};
+$('cp').onclick=()=>{navigator.clipboard.writeText($('lk').value);$('cp').textContent='Copiado'};
+$('sh').onclick=()=>{const u=$('lk').value,n=$('nm').value.trim();navigator.share?navigator.share({title:'Valora '+n,url:u}):window.open('https://wa.me/?text='+encodeURIComponent('Valora '+n+': '+u))};
+</script></body></html>
